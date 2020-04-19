@@ -1,0 +1,7 @@
+{
+  "name": "animation",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
