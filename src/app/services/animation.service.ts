@@ -5,7 +5,7 @@ import { switchMap, tap, takeUntil, filter } from 'rxjs/operators';
 import * as Hammer from 'hammerjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 
 export class AnimationService {
@@ -14,12 +14,12 @@ export class AnimationService {
   public initEvent(scrollArea: IonContent, panFunc?, scrollFunc?) {
     const mc = new Hammer(scrollArea[`el`], {
       inputClass: Hammer.TouchMouseInput,
-      touchAction: 'auto'
+      touchAction: 'auto',
     });
     const panning = new Hammer.Pan({ event: 'pan', direction: Hammer.DIRECTION_ALL, enable: true });
     mc.add(panning);
     const pan$ = fromEventPattern(handler =>
-      mc.on('panstart panend', handler),
+      mc.on('panstart panend', handler)
     );
 
     const hammer$ = this.gestureEvent(panFunc, scrollArea, pan$);
@@ -53,7 +53,7 @@ export class AnimationService {
         moveCng$.subscribe({
           next: null,
           error: null,
-          complete: props.onEnd
+          complete: props.onEnd,
         });
         return moveCng$;
       })

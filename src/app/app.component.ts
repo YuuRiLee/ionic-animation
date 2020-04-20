@@ -7,41 +7,46 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss']
+  styleUrls: ['app.component.scss'],
 })
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
+      title: 'Parallax',
+      url: '/parallax',
+      icon: 'mail',
+    },
+    {
       title: 'Inbox',
       url: '/folder/Inbox',
-      icon: 'mail'
+      icon: 'mail',
     },
     {
       title: 'Outbox',
       url: '/folder/Outbox',
-      icon: 'paper-plane'
+      icon: 'paper-plane',
     },
     {
       title: 'Favorites',
       url: '/folder/Favorites',
-      icon: 'heart'
+      icon: 'heart',
     },
     {
       title: 'Archived',
       url: '/folder/Archived',
-      icon: 'archive'
+      icon: 'archive',
     },
     {
       title: 'Trash',
       url: '/folder/Trash',
-      icon: 'trash'
+      icon: 'trash',
     },
     {
       title: 'Spam',
       url: '/folder/Spam',
-      icon: 'warning'
-    }
+      icon: 'warning',
+    },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
