@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,66 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+:root {
+  --menu-header-height: 44px;
+}
+parallax-header {
+  --title-left-padding: 16px;
+  ion-icon.btn2 {
+    font-size: 18px;
+  }
+  ion-icon,
+  ion-title,
+  ion-back-button {
+    color: white;
+  }
+  &.opacity-transition {
+    ion-title {
+      transition: opacity 250ms;
+    }
+  }
+  ion-title {
+    letter-spacing: inherit;
+    text-align: center;
+    padding: 0 52px 0;
+  }
+  .opacity-ctrl {
+    opacity: 0 !important;
+  }
+  .parallax-title {
+    position: absolute;
+    text-align: left;
+    font-size: 2rem;
+    bottom: 0;
+    height: 100%;
+    margin: var(--title-left-padding);
+    padding: 0;
+    letter-spacing: inherit;
+    width: calc(100% - var(--title-left-padding) * 2);
+    height: calc(100% - var(--title-left-padding) * 2);
+    transform: translate3d(calc(var(--scroll) * var(--x)), calc(var(--scroll) * var(--y)), 0) scale(var(--scale));
+    will-change: transform;
+    .title {
+      overflow: hidden;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
+parallax-header {
+  .image-overlay {
+    &[scroll-dir="up"] {
+      transition: height 150ms !important;
+      .parallax-title {
+        transition: transform 150ms ease-in;
+      }
+    }
+    &[scroll-dir="down"] {
+      transition: height 150ms !important;
+      .parallax-title {
+        transition: transform 150ms;
+      }
+    }
+  }
+}

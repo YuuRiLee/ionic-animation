@@ -1,0 +1,82 @@
+:host {
+  width: 100%;
+}
+ion-toolbar {
+  --background: transparent;
+  --ion-color-base: transparent !important;
+  --border-style: none;
+}
+.parallax-cnt-ctrl {
+  transform: translate3d(0, var(--content-top), 0);
+}
+.title {
+  display: inline-block;
+  width: 100%;
+  left: 0;
+  white-space: nowrap;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0), #ffffff 20%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub-title {
+  --menu-header-height: 44px;
+  --sub-yPos: calc(44px + var(--ion-safe-area-top));
+  font-size: 13px;
+  color: white;
+  padding: var(--title-left-padding);
+  padding-top: 0px;
+  position: absolute;
+  transform: translate3d(0, calc(var(--sub-yPos) - var(--scroll) * var(--sub-yPos)), 0);
+  letter-spacing: -0.08px;
+  font-weight: 600;
+  opacity: calc(1 - var(--scroll) * 2);
+}
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 9;
+  height: var(--image-header-height);
+}
+.md-to-ios {
+  padding: 0 90px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+@keyframes titleOuterAni {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  5% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(var(--scale)) translate3d(var(--x), 0, 0);
+  }
+}
+@keyframes titleInnerAni {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, var(--y), 0);
+  }
+}
+@keyframes subTitleAni {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+}
