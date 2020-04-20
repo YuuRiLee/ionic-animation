@@ -1,0 +1,45 @@
+<parallax-header [imageUrl]="imageUrl" [subName]="subName" [title]="title" [scrollContent]="scrollArea">
+	<ng-container top-left-content>
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+	</ng-container>
+	<ng-container title-content>
+		<ion-title><span>{{title}}</span></ion-title>
+	</ng-container>
+	<ng-container top-right-content>
+		<ion-button (click)="changeViewMode()">
+			<ion-icon src="assets/svgs/card.svg" (click)="changeViewMode()" tappable></ion-icon>
+		</ion-button>
+	</ng-container>
+</parallax-header>
+<ion-content [fullscreen]="true" fullscreen default scrollEvents="true" #scrollArea>
+	<div class="content">
+		<ion-list>
+			<ion-item>
+				<img src="/assets/imgs/icon.png" />
+				<div class="content-wrapp">
+					<span class="title">Cherry blossom</span>
+					<span class="desc">Found on the way</span>
+					<span class="place">7 days ago</span>
+				</div>
+			</ion-item>
+			<ion-item>
+				<img src="/assets/imgs/icon.png" />
+				<div class="content-wrapp">
+					<span class="title">Cherry blossom</span>
+					<span class="desc">Found on the way</span>
+					<span class="place">7 days ago</span>
+				</div>
+			</ion-item>
+			<ion-item>
+				<img src="/assets/imgs/icon.png" />
+				<div class="content-wrapp">
+					<span class="title">Cherry blossom</span>
+					<span class="desc">Found on the way</span>
+					<span class="place">7 days ago</span>
+				</div>
+			</ion-item>
+		</ion-list>
+	</div>
+</ion-content>
